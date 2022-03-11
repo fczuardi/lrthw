@@ -1,18 +1,24 @@
-my_name = 'Zed A. Shaw'
-my_age = 35 # not a lie
-my_height = 74 # inches
-my_weight = 180 # lbs
-my_eyes = 'Blue'
-my_teeth = 'White'
-my_hair = 'Brown'
+name = 'Zed A. Shaw'
+age = 35 # not a lie
+height = 74 # inches
+metric_height = height * 0.0254 # meters
+weight = 180 # lbs
+metric_weight = weight * 0.454 # kilograms
+eyes = 'Blue'
+teeth = 'White'
+hair = 'Brown'
 
-puts "Lets talk about %s." % my_name
-puts "He's %d inches tall." % my_height
-puts "He's %d pounds heavy." % my_weight
+puts "Lets talk about %s." % name
+puts "He's %d inches (%0.2f m) tall." % [height, metric_height]
+puts "He's %d pounds (%0.2f kg) heavy." % [weight, metric_weight]
 puts "Actually that's not too heavy."
-puts "He's got %s eyes and %s hair." % [my_eyes, my_hair]
-puts "His teeth are usually %s depending on the coffee." % my_teeth
+puts "He's got %s eyes and %s hair." % [eyes, hair]
+puts "His teeth are usually %s depending on the coffee." % teeth
 
 # this line is tricky, try to get it exactly right
 puts "If I add %d, %d, and %d I get %d." % [
-  my_age, my_height, my_weight, my_age + my_height + my_height]
+  age, height, weight, age + height + height]
+
+puts "More formatting tests, a word with positive padding 10: '%10s'." % "banana"
+puts "More formatting tests, a word with negative padding 10: '%-10s'." % "banana"
+puts "Number padded to 6 digits with leading zeroes %06d." % [1234]
